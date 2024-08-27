@@ -1,0 +1,21 @@
+MOV R7, 30h
+MOV A, R7
+MOV B, #0
+DEC R7
+go:
+MOV R6, B
+MOV B, R7
+MUL AB
+MOV 11h, A
+MOV 12h, B
+MOV A, R6
+MOV B, R7
+MUL AB
+MOV B, 12h
+ADD A, B
+MOV B, A
+MOV A, 11h
+DJNZ R7, go
+END
+
+
