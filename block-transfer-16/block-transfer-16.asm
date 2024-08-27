@@ -1,0 +1,10 @@
+MOV CX, [1110h]
+MOV AX, 7000h
+MOV DS, AX
+MOV BX, 0000h
+begin: MOV AX, [BX]
+MOV [BX+1000h], AX
+INC BX
+CMP BX, CX
+JLE begin
+HLT
